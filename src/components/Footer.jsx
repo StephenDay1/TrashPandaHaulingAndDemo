@@ -100,8 +100,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      <div id="faq" className="sr-only" aria-hidden="true" />
     </footer>
   )
 }

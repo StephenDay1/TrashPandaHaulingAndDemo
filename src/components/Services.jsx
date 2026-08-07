@@ -68,14 +68,14 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <a
             href="#services"
             className="inline-block rounded-lg bg-panda-orange px-8 py-3.5 font-display text-lg font-extrabold uppercase tracking-wide text-white transition hover:bg-panda-orange-dark"
           >
             View All Services
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   )
