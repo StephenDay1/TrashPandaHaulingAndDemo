@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-panda-orange: #f15a24;
+  --color-panda-orange-dark: #d94a18;
+  --color-panda-black: #141414;
+  --color-panda-charcoal: #1c1c1c;
+  --color-panda-card: #242424;
+  --color-panda-paper: #e8e6e3;
+  --color-panda-muted: #9a9a9a;
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-body: "Barlow", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-panda-black);
+  background: var(--color-panda-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.paper-bg {
+  background-color: var(--color-panda-paper);
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.04) 0.6px, transparent 0.6px),
+    radial-gradient(rgba(0, 0, 0, 0.03) 0.8px, transparent 0.8px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 1px 2px;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(105deg, rgba(10, 10, 10, 0.88) 0%, rgba(10, 10, 10, 0.55) 48%, rgba(10, 10, 10, 0.25) 100%),
+    linear-gradient(to top, rgba(10, 10, 10, 0.75) 0%, transparent 45%);
+}
+
+.slant-phone {
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.section-wave {
+  display: block;
+  width: 100%;
+  height: 36px;
+  color: var(--color-panda-charcoal);
+}
+
+.section-wave-paper {
+  color: var(--color-panda-paper);
+}
+
+.section-wave-orange {
+  color: var(--color-panda-orange);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.7s ease-out 0.12s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.7s ease-out 0.24s both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 0.7s ease-out 0.36s both;
+}
