@@ -1,3 +1,4 @@
+import Logo from './Logo'
 import { CheckIcon, StarIcon } from './Icons'
 
 const reasons = [
@@ -68,14 +69,8 @@ export default function WhyChoose() {
               ))}
             </ul>
 
-            {/* Mascot placeholder — replace when logo/illustration lands */}
             <div className="mt-10 flex justify-center lg:justify-start">
-              <div className="flex h-48 w-48 items-center justify-center rounded-full border-4 border-dashed border-panda-orange/50 bg-white/60">
-                <div className="text-center">
-                  <p className="font-display text-3xl font-extrabold text-panda-orange">TP</p>
-                  <p className="mt-1 text-xs font-medium text-panda-muted">Mascot coming soon</p>
-                </div>
-              </div>
+              <Logo size={220} className="drop-shadow-lg" />
             </div>
           </div>
 

@@ -27,7 +27,7 @@ export default function Header({ variant = 'overlay' }) {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 md:px-6">
         <Link to="/" className="shrink-0">
-          <Logo size={52} light />
+          <Logo size={80} />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">

@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
 
         <div className="flex justify-center">
-          <Logo size={88} light className="flex-col text-center sm:flex-row sm:text-left" />
+          <Logo size={160} />
         </div>
 
         <div className="space-y-4 lg:text-right">
