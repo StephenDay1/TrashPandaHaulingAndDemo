@@ -15,8 +15,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=80')",
+          backgroundImage: "url('/truck-trailer.jpeg')",
         }}
         role="img"
         aria-label="Pickup truck ready for hauling"
