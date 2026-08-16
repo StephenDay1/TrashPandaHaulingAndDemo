@@ -13,6 +13,7 @@
     "deploy:hosting": "npm run build && firebase deploy --only hosting"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@tailwindcss/vite": "^4.3.3",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

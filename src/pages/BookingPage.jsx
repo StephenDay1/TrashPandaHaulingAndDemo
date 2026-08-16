@@ -1,46 +1,18 @@
-import { useEffect, useRef } from 'react'
+import Cal from '@calcom/embed-react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { CalendarIcon, PhoneIcon, ChatIcon } from '../components/Icons'
 import { CAL_LINK, PHONE_DISPLAY, PHONE_TEL } from '../constants'
 
+function toCalPath(calLink) {
+  return calLink
+    .trim()
+    .replace(/^https?:\/\/(www\.)?(app\.)?cal\.com\//i, '')
+    .replace(/^\/+|\/+$/g, '')
+}
+
 function CalEmbed({ calLink }) {
-  const containerRef = useRef(null)
-
-  useEffect(() => {
-    if (!calLink || !containerRef.current) return
-
-    const scriptId = 'cal-embed-script'
-    const init = () => {
-      window.Cal?.('init', { origin: 'https://app.cal.com' })
-      window.Cal?.('inline', {
-        elementOrSelector: containerRef.current,
-        calLink,
-        layout: 'month_view',
-        config: { theme: 'light' },
-      })
-    }
-
-    if (window.Cal) {
-      init()
-      return undefined
-    }
-
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script')
-      script.id = scriptId
-      script.src = 'https://app.cal.com/embed/embed.js'
-      script.async = true
-      script.onload = init
-      document.body.appendChild(script)
-    } else {
-      init()
-    }
-
-    return undefined
-  }, [calLink])
-
   if (!calLink) {
     return (
       <div className="flex min-h-120 flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-panda-orange/40 bg-white px-6 py-16 text-center">
@@ -78,10 +50,14 @@ function CalEmbed({ calLink }) {
   }
 
   return (
-    <div
-      ref={containerRef}
-      className="min-h-160 w-full overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5"
-    />
+    <div className="min-h-175 w-full overflow-auto rounded-xl bg-white shadow-sm ring-1 ring-black/5">
+      <Cal
+        calLink={toCalPath(calLink)}
+        namespace="booking"
+        config={{ layout: 'month_view', theme: 'light' }}
+        style={{ width: '100%', height: '100%', minHeight: '700px', overflow: 'scroll' }}
+      />
+    </div>
   )
 }
 

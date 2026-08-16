@@ -19,7 +19,8 @@ export const SOCIAL = {
 
 /**
  * Cal.com username/event path for the booking page embed.
- * Example: "trashpanda/consultation"
- * Leave empty to show the placeholder until Cal.com is connected.
+ * Use the public booking URL without https://cal.com/
+ * Example: "trashpanda/quote"
+ * Confirm the event is published: https://cal.com/YOUR_PATH must load, not 404.
  */
-export const CAL_LINK = ''
+export const CAL_LINK = 'trashpanda-kcjjcp/quote'
